@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.jakewharton.rxbinding.view.RxView;
+
 import rx.Observable;
 import rx.Subscriber;
 
@@ -25,13 +27,13 @@ public class OperatorsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hello_world);
         mTextView = (TextView) findViewById(R.id.text_output);
-        findViewById(R.id.button_rx).setOnClickListener(v -> {
-            myObservable.map(s -> "Hello " + s)
-                    .map(String::trim)
-                    .map(String::length)
-                    .map(i -> Integer.toString(i))
-                    .map(s -> "Chars = " + s)
-                    .subscribe(mTextView::setText);
-        });
+        RxView.clicks(findViewById(R.id.button_rx)).subscribe(
+                o -> myObservable.map(s -> "Hello " + s)
+                        .map(String::trim)
+                        .map(String::length)
+                        .map(i -> Integer.toString(i))
+                        .map(s -> "Chars = " + s)
+                        .subscribe(mTextView::setText)
+        );
     }
 }

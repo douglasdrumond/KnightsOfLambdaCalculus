@@ -25,8 +25,6 @@ public class HelloWorld2Activity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hello_world);
         mTextView = (TextView) findViewById(R.id.text_output);
-        findViewById(R.id.button_rx).setOnClickListener(v -> {
-            myObservable.subscribe(mTextView::setText);
-        });
+        findViewById(R.id.button_rx).setOnClickListener(v -> myObservable.subscribe(mTextView::setText));
     }
 }
