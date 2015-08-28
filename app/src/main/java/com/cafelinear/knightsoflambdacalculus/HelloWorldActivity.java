@@ -21,6 +21,7 @@ public class HelloWorldActivity extends Activity {
     });
 
     private Subscriber<String> mySubscriber = new Subscriber<String>() {
+
         @Override
         public void onNext(String s) { mTextView.setText(s); }
 

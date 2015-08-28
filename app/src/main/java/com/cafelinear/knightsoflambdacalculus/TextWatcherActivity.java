@@ -15,7 +15,6 @@ import rx.Observable;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 
-
 public class TextWatcherActivity extends RxActivity {
 
     private static final String LOG_TAG = TextWatcherActivity.class.getSimpleName();
@@ -33,9 +32,10 @@ public class TextWatcherActivity extends RxActivity {
 
         final Observable<TextViewTextChangeEvent> textChangeObservable = RxTextView.textChangeEvents(mUsername);
 
-        textChangeObservable.compose(RxLifecycle.bindActivity(lifecycle())).debounce(400, TimeUnit.MILLISECONDS)
-                .observeOn(AndroidSchedulers.mainThread()).subscribe(getSearchObserver());
-
+        textChangeObservable.compose(RxLifecycle.bindActivity(lifecycle()))
+                .debounce(400, TimeUnit.MILLISECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(getSearchObserver());
     }
 
     private Observer<TextViewTextChangeEvent> getSearchObserver() {

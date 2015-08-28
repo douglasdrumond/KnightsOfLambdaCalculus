@@ -18,7 +18,6 @@ public class MainActivity extends Activity {
                 v -> startActivity(new Intent(this, OperatorsActivity.class)));
         findViewById(R.id.button_textwatcher).setOnClickListener(
                 v -> startActivity(new Intent(this, TextWatcherActivity.class)));
-        findViewById(R.id.button_github).setOnClickListener(
-                v -> startActivity(new Intent(this, GitHubActivity.class)));
+        findViewById(R.id.button_github).setOnClickListener(v -> startActivity(new Intent(this, GitHubActivity.class)));
     }
 }
