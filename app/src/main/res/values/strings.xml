@@ -4,6 +4,7 @@
     <string name="app_name">KnightsOfLambdaCalculus</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="searching_for_label">Searching for</string>
     <string name="action_settings">Settings</string>
     <string name="do_rx_stuff">Do Rx stuff</string>
     <string name="username">Username</string>

@@ -11,9 +11,9 @@
 
     <EditText
         android:id="@+id/username"
-        android:hint="@string/username"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:hint="@string/username"/>
 
     <Button
         android:id="@+id/button_rx"
@@ -27,4 +27,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world"/>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>

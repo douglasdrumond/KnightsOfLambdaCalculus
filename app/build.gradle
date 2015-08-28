@@ -29,7 +29,11 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'io.reactivex:rxandroid:0.25.0'
+    compile 'io.reactivex:rxandroid:1.0.1'
+
+    compile 'com.jakewharton.rxbinding:rxbinding:0.2.0'
+    compile 'com.trello:rxlifecycle:0.2.0'
+    compile 'com.trello:rxlifecycle-components:0.2.0'
 
     compile 'com.squareup.retrofit:retrofit:1.9.0'
     compile 'com.squareup.okhttp:okhttp:2.2.0'
